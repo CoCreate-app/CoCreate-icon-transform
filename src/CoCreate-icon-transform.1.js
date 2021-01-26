@@ -19,14 +19,9 @@
  //}
  
 document.addEventListener('click', function(e) {
-	if (e.target  && e.target.getAttribute('data-transform_to')) {
-	
-		let t_icon = (e.target.tagName == "I") ? e.target : e.target.querySelector('i');
-	
-		if(e.target.tagName != "I" && typeof t_icon.dataset.transform_to == 'undefined'){
-			t_icon.dataset.transform_to = e.target.getAttribute('data-transform_to')
-		}
-			
+	if (e.target && e.target.tagName == "I" && e.target.getAttribute('data-transform_to')) {
+		let t_icon = e.target;
+		
 		if(typeof t_icon.dataset.transform_to != 'undefined'){
 			var transform_to = t_icon.dataset.transform_to;
 			var class_name = t_icon.className;
