@@ -19,12 +19,17 @@
  //}
  
 document.addEventListener('click', function(e) {
-	if (e.target  && e.target.getAttribute('data-transform_to')) {
+	iconTransform(e.target)
+	e.preventDefault();
+})
+
+function iconTransform(element){
+	if (element  && element.getAttribute('data-transform_to')) {
 	
-		let t_icon = (e.target.tagName == "I") ? e.target : e.target.querySelector('i');
+		let t_icon = (element.tagName == "I") ? element : element.querySelector('i');
 	
-		if(e.target.tagName != "I" && typeof t_icon.dataset.transform_to == 'undefined'){
-			t_icon.dataset.transform_to = e.target.getAttribute('data-transform_to')
+		if(element.tagName != "I" && typeof t_icon.dataset.transform_to == 'undefined'){
+			t_icon.dataset.transform_to = element.getAttribute('data-transform_to')
 		}
 			
 		if(typeof t_icon.dataset.transform_to != 'undefined'){
@@ -33,7 +38,9 @@ document.addEventListener('click', function(e) {
 			t_icon.className = transform_to;
 			t_icon.dataset.transform_to = class_name;
 		}
-		e.preventDefault();
 		
 	}
-})
+}
+
+const CoCreateIconTransform = { iconTransform };
+export default CoCreateIconTransform;
