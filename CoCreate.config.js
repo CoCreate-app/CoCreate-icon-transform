@@ -9,7 +9,7 @@ module.exports = {
     sources: [{
             path: "./docs/index.html",
             collection: "files",
-            document_id: "",
+            document_id: "601f4b1c6b402c72efc07e0b",
             key: "html",
             data:{
                 name: "Icon Transform Doc",
@@ -19,10 +19,10 @@ module.exports = {
    
     crud: [{
             collection: "routes",
-            document_id: "",
+            document_id: "601f4c806b402c72efc07e0c",
             data:{
                 collection: "files",
-                document_id: "",
+                document_id: "601f4b1c6b402c72efc07e0b",
                 name: "html",
                 domains: ["cocreate.app", "server.cocreate.app", "ws.cocreate.app"],
                 route: "/docs/icon-transform",
